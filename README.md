@@ -3,7 +3,7 @@ English / [Japanese](https://github.com/xmisao/rubyjump.vim/blob/master/README.j
 RubyJump
 =============
 
-Vim plugin for ruby editing. Quick jump to method, class, module defenitions in a buffer.
+Vim plugin for ruby editing. Quick jump to method, class, module defenitions in buffers.
 
 ## Demo
 
@@ -32,7 +32,7 @@ Ruby interface(if_ruby) is required.
 
 ### Commands
 
-RubyJump add there comamnds to Vim.
+RubyJump add these comamnds to Vim.
 
 - RubyJump
 - RubyJumpLocal
@@ -97,7 +97,7 @@ Show RubyJump's version information.
 
 ### Keymaps
 
-RubyJump provides there keymaps to Vim.
+RubyJump provides these keymaps to Vim.
 Keymaps are obverse commands.
 
 <table>
@@ -118,10 +118,30 @@ Keymaps are obverse commands.
 RubyJump use these variables.
 
 - g:rubyjump#debug
+- g:rubyjump#enable_ripper
+- g:rubyjump#filetypes
 
 #### g:rubyjump#debug
 
 If set to `1`, debug mode is enabled.
+
+Default value is `0`.
+
+#### g:rubyjump#enable_ripper
+
+If set to `1`, RubyJump use ripper. ripper is parser of Ruby.
+
+If this option enabled, first RubyJump challenge parsing by ripper, if parse error detected, then parse by regular expression.
+
+This option requires over Ruby 1.9.
+
+Default value is `1` in over Ruby 1.9 environment, `0` in under Ruby 1.8 environment.
+
+#### g:rubyjump#filetypes
+
+Specify buffer filetypes that jump target as string array.
+
+Default value is `['ruby']`.
 
 ## Configuration Example
 
